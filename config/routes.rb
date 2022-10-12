@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   
   delete 'users/:id', to: 'users#destroy'
   
-  get 'tweetss/index', to: 'tweets#index'
-  root 'tweetss#index'
+  get 'tweets/index', to: 'tweets#index'
+  root 'tweets#index'
   
   get 'tweets/new', to: 'tweets#new'
   
