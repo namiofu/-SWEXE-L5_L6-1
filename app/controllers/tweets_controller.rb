@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
-    logger.debug @users.count
+    logger.debug @tweets.count
   end
   
   def new
