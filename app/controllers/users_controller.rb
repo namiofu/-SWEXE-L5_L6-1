@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    @tweet = Tweet.new(uid: params[:user][:uid], pass: params[:user][:pass])
-    tweet.save
+    @user = User.new(uid: params[:user][:uid], pass: params[:user][:pass])
+    user.save
     redirect_to root_path #"/**"
   end
   
