@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tweets/index'
   get 'users/index', to: 'users#index'
   root 'users#index'
   
