@@ -1,7 +1,7 @@
 <% @users.each do |my| %>
    <p> 
-       <%= my.uid %>
-       <%= my.pass %>
+       id: <%= my.uid %>
+       pass: <%= my.pass %>
        <%= link_to '削除', "/users/#{my.id}", method: :delete %>
 <% end %>
 
