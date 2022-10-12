@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'tweets/index'
   get 'users/index', to: 'users#index'
   root 'users#index'
   
@@ -8,5 +7,14 @@ Rails.application.routes.draw do
   post 'users', to: 'users#create'
   
   delete 'users/:id', to: 'users#destroy'
+  
+  get 'tweetss/index', to: 'tweets#index'
+  root 'tweetss#index'
+  
+  get 'tweets/new', to: 'tweets#new'
+  
+  post 'tweets', to: 'tweets#create'
+  
+  delete 'tweets/:id', to: 'tweets#destroy'
   
 end
