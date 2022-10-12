@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(uid: params[:user][:uid], pass: params[:user][:pass])
+    user = User.new(uid: params[:user][:uid], pass: params[:user][:pass])
     user.save
     redirect_to root_path #"/**"
   end
