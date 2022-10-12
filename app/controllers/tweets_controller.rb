@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
   end
   
   def create
-    tweet = Tweet.new(uid: params[:tweet][:message])
+    tweet = Tweet.new(message: params[:tweet][:message])
     tweet.save
     redirect_to root_path #"/**"
   end
