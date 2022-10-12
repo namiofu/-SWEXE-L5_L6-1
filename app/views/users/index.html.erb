@@ -2,7 +2,7 @@
    <p> 
        <%= my.uid %>
        <%= my.pass %>
-       <%= link_to '削除', "/tweets/#{my.id}", method: :delete %>
+       <%= link_to '削除', "/users/#{my.id}", method: :delete %>
 <% end %>
 
 <p><%= link_to '新規追加', users_new_path %></p>
