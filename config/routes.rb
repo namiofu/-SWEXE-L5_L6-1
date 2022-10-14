@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   
   delete 'tweets/:id', to: 'tweets#destroy'
   
-  post 'top/login'
+  post 'tops/login'
   
-  get 'top/logout'
+  get 'tops/logout'
   
 end
