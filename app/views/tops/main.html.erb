@@ -1,0 +1,8 @@
+<% @tops.each do |my| %>
+   <p> 
+       <%= my.message %>
+       <%= link_to '削除', "/tweets/#{my.id}", method: :delete %>
+<% end %>
+
+<p><%= link_to 'ツイートする', tweets_new_path %></p>
+<p><%= link_to 'ユーザー一覧', users_index_path %></p>
