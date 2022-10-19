@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   def create
     tweet = Tweet.find(params[:tweet_id])
     unless tweet.liked?(current_user)
-      tweet.likes(current_user)
+      tweet.like(current_user)
     end
    redirect_to root_path
   end
