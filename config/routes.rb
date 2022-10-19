@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   resources :users
   resources :tweets
   
-  root 'top#main'
-  get 'top/main'
-  post 'top/login'
-  get 'top/logout'
+  root 'tops#main'
+  get 'tops/main'
+  post 'tops/login'
+  get 'tops/logout'
   
   resources :likes
   #post 'likes', to: 'likes#create'
