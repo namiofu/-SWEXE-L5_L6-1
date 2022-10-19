@@ -1,6 +1,6 @@
 class TopsController < ApplicationController
   def main
-    if session[:uid]
+    if current_user
       render 'main'
     else
       render 'login'
@@ -12,7 +12,7 @@ class TopsController < ApplicationController
     if user
       login_password = BCrypt::Password.new(user.pass)
       if login_password == params[:pass]
-        session[:uid] = user.uid
+        current_user = user.uid
         redirect_to tops_main_path
       else
         render 'login'
