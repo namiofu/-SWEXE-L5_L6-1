@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    validates :uid, prersence: true
+    validates :uid, presence: true
     validates :password, presence: true, confirmation: true
     
     attr_accessor :password, :password_confirmation
