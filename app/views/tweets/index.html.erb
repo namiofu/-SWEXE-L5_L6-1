@@ -14,7 +14,7 @@
 <% end %>
 
 <% if session[:uid %>
-    <%= link_to 'ツイートする', tweets_new_path %>
+    <%= link_to 'ツイートする', new_tweet_path %>
 <% else %>
     <%= link_to 'ログイン', tops_login_path %>
 <%end%>
