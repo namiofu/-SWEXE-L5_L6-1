@@ -1,21 +1,30 @@
 class TopsController < ApplicationController
   def main
-    render 'login'
+    if session[:uid]
+      render 'main'
+    else
+      render 'login'
+    end
   end
   
   def login
     user = User.find_by(uid: params[:uid])
-    if user and BCrypt::Password.new(user.pass) == params[:pass]
-      session[:login_uid] = params[:uid]
-      redirect_to root_path
+    if user
+      login_password = BCrypt::Password.new(user.pass)
+      if login_password == params[:pass]
+        session[:uid] = user.uid
+        redirect_to tops_main_path
+      else
+        render 'login'
+      end
     else
       render 'login'
     end
   end
     
   def logout
-      session.delete(:login_uid)
-      redirect_to root_path
+      session.delete(:uid)
+      redirect_to tops_main_path
   end
     
 end

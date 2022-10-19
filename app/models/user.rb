@@ -11,6 +11,7 @@ class User < ApplicationRecord
         @password = val
     end
     
-    has_many :likes
-    has_many :like_tweets, through: :likes, source: :tweet
+    has_many :tweets, dependent: :destroy #ユーザを消すとツイートも消える
+    has_many :likes, dependent: :destroy #ユーザを消すといいねも消える
+    has_many :like_tweets, source: :tweet, through: :likes
 end

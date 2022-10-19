@@ -2,8 +2,22 @@
    <p> 
        <%= my.message %>
        <%= link_to '削除', "/tweets/#{my.id}", method: :delete %>
+       
+       <% if session[:uid %>
+           <% if my.likes.count == 0 %>
+               <%= link_to '♡', likes_path(tweet_id: my.id), method: :post %>
+            <% else %>
+                <%= link_to '♥', like_path(my), method: :delete %>
+            <% end %>
+        <%end%>
+    </p>
 <% end %>
 
-<p><%= link_to 'ツイートする', tweets_new_path %></p>
+<% if session[:uid %>
+    <%= link_to 'ツイートする', tweets_new_path %>
+<% else %>
+    <%= link_to 'ログイン', tops_main_path %>
+<%end%>
 <p><%= link_to 'ユーザー一覧', users_index_path %></p>
+
 

@@ -3,6 +3,7 @@
        id: <%= my.uid %>
        pass: <%= my.pass %>
        <%= link_to '削除', user_path(my.id), method: :delete %>
+    </p>
 <% end %>
 
 <p><%= link_to '新規ユーザ追加', users_new_path %></p>
