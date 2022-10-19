@@ -13,7 +13,7 @@ class TopsController < ApplicationController
       login_password = BCrypt::Password.new(user.pass)
       if login_password == params[:pass]
         session[:uid] = user.uid
-        redirect_to top_main_path
+        redirect_to tops_main_path
       else
         render 'login'
       end
@@ -24,7 +24,7 @@ class TopsController < ApplicationController
     
   def logout
       session.delete(:uid)
-      redirect_to top_main_path
+      redirect_to tops_main_path
   end
     
 end
