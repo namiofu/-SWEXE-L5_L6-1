@@ -3,7 +3,7 @@
        <%= my.message %>
        <%= link_to '削除', "/tweets/#{my.id}", method: :delete %>
        
-       <% if session[:uid %>
+       <% if session[:uid] %>
            <% if my.likes.count == 0 %>
                <%= link_to '♡', likes_path(tweet_id: my.id), method: :post %>
             <% else %>
@@ -13,7 +13,7 @@
     </p>
 <% end %>
 
-<% if session[:uid %>
+<% if session[:uid] %>
     <%= link_to 'ツイートする', new_tweet_path %>
 <% else %>
     <%= link_to 'ログイン', tops_login_path %>
