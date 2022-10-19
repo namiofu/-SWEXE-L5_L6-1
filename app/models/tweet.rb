@@ -3,6 +3,7 @@ class Tweet < ApplicationRecord
     has_many :like_users, source: :user, through: :likes
     
     def like(user)
+        logger.debug(user)
         likes.create(user_id: user.id)
     end
 
