@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     unless tweet.liked?(current_user)
       tweet.like(current_user)
     end
-   redirect_to root_path
+   redirect_to tweets_path
   end
 
   def destroy
@@ -13,6 +13,6 @@ class LikesController < ApplicationController
     if tweet.liked?(current_user)
       tweet.unlike(current_user)
     end
-    redirect_to root_path
+    redirect_to tweets_path
   end
 end
