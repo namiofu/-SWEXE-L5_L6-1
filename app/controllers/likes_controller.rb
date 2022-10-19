@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def create
     tweet = Tweet.find(params[:tweet_id])
-    logger.debug("|" + user.to_s + "|")
+    logger.debug("|" + current_user.to_s + "|")
     unless tweet.liked?(current_user)
       tweet.like(current_user)
     end
